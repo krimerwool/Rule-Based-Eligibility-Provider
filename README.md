@@ -60,8 +60,9 @@ This project demonstrates how to construct and evaluate abstract syntax trees (A
    - The frontend is still in progress. In the meantime, you can see the working of the application using the Jupyter Notebook provided in the src folder (test.ipynb).
 4. Jupyter Notebook
    - Open the test.ipynb notebook in the src folder to interactively test the AST construction and evaluation process.
-   - Follow the Below Screenshot for clarification
+   - Follow the Below Screenshots for clarification
 ![Enter The Custom Rules where the white arrow is Pointed](./images/enter-rules.jpg)
+![Enter The Data where Blue arrow is pointed and Results are displayed where the White arrow is pointed](./images/enter-data-and-get-result.jpg)
 
 
    
