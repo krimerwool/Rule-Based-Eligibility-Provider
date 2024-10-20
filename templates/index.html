@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+
+<body>
+    <h1>Rule Management</h1>
+
+    <button id="getRuleButton">Get Rules</button>
+    <button id="selectRuleButton">Select Rule</button>
+    <button id="getOperandsButton">Get Operands</button>
+    <button id="evaluateDataButton">Evaluate User Data</button>
+    <button id="addRuleButton">Add Rule</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#getRuleButton').click(function() {
+                const numberOfRules = prompt("Enter number of rules:");
+                const rule = prompt("Enter the rule:");
+                $.get(`/get-rule?number_of_rules=${numberOfRules}&rule=${rule}`, function(data) {
+                    console.log("Rules Retrieved: ", data);
+                });
+            });
+
+            $('#selectRuleButton').click(function() {
+                const ruleNumber = prompt("Enter rule number to select:");
+                $.get(`/select_rule?rule_number=${ruleNumber}`, function(data) {
+                    console.log("Selected Rule: ", data);
+                });
+            });
+
+            $('#getOperandsButton').click(function() {
+                $.get('/get_operands', function(data) {
+                    console.log("Operands Retrieved: ", data);
+                });
+            });
+
+            $('#evaluateDataButton').click(function() {
+                const userData = {}; // Collect user data from inputs
+                $.get(`/evaluate_user_data?${$.param(userData)}`, function(data) {
+                    console.log("Evaluation Result: ", data);
+                });
+            });
+
+            $('#addRuleButton').click(function() {
+                const numberOfRulesToCombine = prompt("Enter number of rules to combine:");
+                const operator = prompt("Enter operator (AND/OR):");
+                const ruleNumbers = []; // Collect rule numbers
+                for (let i = 0; i < numberOfRulesToCombine; i++) {
+                    ruleNumbers.push(prompt(`Enter rule number ${i + 1}:`));
+                }
+                const params = {number: numberOfRulesToCombine, operator: operator};
+                ruleNumbers.forEach((ruleNumber, index) => {
+                    params[`rule_number_${index + 1}`] = ruleNumber;
+                });
+
+                $.get('/add-rule?' + $.param(params), function(data) {
+                    console.log("Newly Added Rule: ", data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

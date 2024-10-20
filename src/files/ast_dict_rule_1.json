@@ -1,0 +1,16 @@
+{
+    "type": "operator",
+    "value": "AND",
+    "left": {
+        "type": "operand",
+        "value": "age > 30",
+        "left": null,
+        "right": null
+    },
+    "right": {
+        "type": "operand",
+        "value": "department = 'Sales'",
+        "left": null,
+        "right": null
+    }
+}

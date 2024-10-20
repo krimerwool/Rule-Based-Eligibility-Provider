@@ -1,0 +1,36 @@
+{
+    "type": "operator",
+    "value": "OR",
+    "left": {
+        "type": "operator",
+        "value": "AND",
+        "left": {
+            "type": "operand",
+            "value": "age > 30",
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "type": "operand",
+            "value": "department = 'Sales'",
+            "left": null,
+            "right": null
+        }
+    },
+    "right": {
+        "type": "operator",
+        "value": "AND",
+        "left": {
+            "type": "operand",
+            "value": "age < 25",
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "type": "operand",
+            "value": "department = 'Marketing'",
+            "left": null,
+            "right": null
+        }
+    }
+}
