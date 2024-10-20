@@ -61,8 +61,16 @@ This project demonstrates how to construct and evaluate abstract syntax trees (A
 4. Jupyter Notebook
    - Open the test.ipynb notebook in the src folder to interactively test the AST construction and evaluation process.
    - Follow the Below Screenshots for clarification
+   - Enter The Custom Rules where the white arrow is Pointed
 ![Enter The Custom Rules where the white arrow is Pointed](./images/enter-rules.jpg)
+   - Enter The Data where Blue arrow is pointed and Results are displayed where the White arrow is pointed
 ![Enter The Data where Blue arrow is pointed and Results are displayed where the White arrow is pointed](./images/enter-data-and-get-result.jpg)
+
+## Contact
+For any questions, feedback, or inquiries, please reach out:
+- Sarthak Pundir
+- Email: sarthakpundir2003@gmail.com
+- GitHub: https://github.com/krimerwool
 
 
    
